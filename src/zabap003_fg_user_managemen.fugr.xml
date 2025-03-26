@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>Nuh User Management</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZABAP003_FG_USER_MANAGEMENF01</SOBJ_NAME>
+    <SOBJ_NAME>LZABAP003_FG_USER_MANAGEMENTOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZABAP003_FG_USER_MANAGEMEN</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>ZABAP003_FM_USER_EXISTNC_CHECK</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Kullanıcı varlığını kontrol et (HR verilerine Göre)</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>SAP_SYSTEM</PARAMETER>
+       <DBFIELD>SY-SYSID</DBFIELD>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>PERS_NO</PARAMETER>
+       <TYP>ZABAP003_E_PERSNO</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>USERNAME</PARAMETER>
+       <DBFIELD>BAPIBNAME-BAPIBNAME</DBFIELD>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>TC_NO</PARAMETER>
+       <TYP>ZABAP003_E_TC_NO</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>MOB_NUMBER</PARAMETER>
+       <TYP>AD_MBNMBR1</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>E_MAIL</PARAMETER>
+       <TYP>AD_SMTPADR</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>RETURN</PARAMETER>
+       <DBFIELD>BAPIRET2</DBFIELD>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>SAP_SYSTEM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>ABAP System Field: Name of SAP System</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>PERS_NO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Personel numarası</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>USERNAME</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Kullanıcı ana verilerinde kullanıcı adı</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>TC_NO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>TC Kimlik No - Son İki Hane-</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>MOB_NUMBER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>İlk mobil telefon numarası: Alan kodu + numara</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>E_MAIL</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>E-posta adresi</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>RETURN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Dönüş parametresi</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZABAP003_FM_USER_GNRTPASS_UNLC</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Yeni şifre üret ve bloke kaldır</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>SAP_SYSTEM</PARAMETER>
+       <TYP>SY-SYSID</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>USERNAME</PARAMETER>
+       <DBFIELD>BAPIBNAME-BAPIBNAME</DBFIELD>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>E_MAIL</PARAMETER>
+       <TYP>AD_SMTPADR</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>RETURN</PARAMETER>
+       <DBFIELD>BAPIRET2</DBFIELD>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>SAP_SYSTEM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>ABAP System Field: Name of SAP System</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>USERNAME</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Kullanıcı ana verilerinde kullanıcı adı</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>E_MAIL</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>E-posta adresi</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>RETURN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Dönüş parametresi</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZABAP003_FM_USER_PASS_RST_MAIL</FUNCNAME>
+     <SHORT_TEXT>Password Reset Mail - Dont Use Only Nuh BT</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>SAP_SYSTEM</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>SY-SYSID</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>FULLNAME</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>AD_NAMTEXT</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>E_MAIL</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>AD_SMTPADR</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>PASSWORD</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>BAPIPWD</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>RETURN</PARAMETER>
+       <DBFIELD>BAPIRET2</DBFIELD>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>SAP_SYSTEM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>ABAP System Field: Name of SAP System</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>FULLNAME</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Kişinin tam adı</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>E_MAIL</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>E-posta adresi</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>PASSWORD</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SAP user password</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>RETURN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Dönüş parametresi</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>
